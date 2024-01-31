@@ -1,0 +1,30 @@
+ALGORITHM checkpoint
+VAR
+   sent:STRING //Variable to store the input sentence
+   first: INTEGER:=0;  //Variable to track the position in the sentence
+   totalWords : INTEGER :=1;  // Variable to count the total words (initialized to 1 for the first word)
+   totalvowels: INTEGER :=0 // Variable to count the total vowels
+   totalchar:   INTEGER :=1 // Variable to count the total characters (initialized to 1 for the first character)
+//This is where the variable ended
+BEGIN
+    Read(sent) //""
+    WHILE (sent{first} <> ".") DO // Continue until the end of the sentence
+        IF (sent{first}=" ") THEN   // Check if the current character is a space (indicating a new word)
+            totalWords:=totalwords+1  // Increment the word count
+        END_IF
+        SWITCH (sent{first}) DO  // Switch statement to check each vowel
+            case "a" :
+            case "e" :
+            case "i" :
+            case "o" :
+            case "u" : totalvowels:= totalvowels+1 // Increment vowel count
+        END_SWITCH 
+
+        first:=first +1  // Move to the next character in the sentence
+    END_WHILE
+    totalchar:+first+1  // Increment total character count
+//this part uses loop and selection processes
+    Write(totalword)  // Display the total word count
+    Write(totalvowels)  // Display the total vowel count
+    Write(totalchar) // Display the total character count
+END
